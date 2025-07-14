@@ -43,7 +43,7 @@
         </GridPane>
 
         <!-- Botão -->
-        <Button text="💾 Salvar Condômino" styleClass="primary-button" />
+        <Button text="💾 Salvar Condômino" styleClass="primary-button" onAction="#salvarAlteracoes"/>
 
     </VBox>
 

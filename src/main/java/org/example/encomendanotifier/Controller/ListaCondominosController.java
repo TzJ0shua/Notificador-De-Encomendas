@@ -55,14 +55,19 @@ public class ListaCondominosController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/encomendanotifier/alterar-condomino.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
 
+            AlterarCondominoController controller =  fxmlLoader.getController();
+            controller.setCondomino(selecionado);
+
             scene.getStylesheets().add(getClass().getResource("/org/example/encomendanotifier/styles/cadastro-condomino.css").toExternalForm());
-            // TODO: passar o objeto para o controller se for editar
 
             Stage stage = new Stage();
             stage.setTitle("Alterar Dados do Condômino");
             stage.setScene(scene);
             stage.sizeToScene();
             stage.showAndWait();
+
+            tabelaCondominos.refresh();
+
 
             // Atualiza a lista após a edição
             listaCondominos.setAll(CondominoRepository.getCondominos());
