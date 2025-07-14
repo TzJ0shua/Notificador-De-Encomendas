@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="500" prefWidth="800" spacing="10" styleClass="tela-principal" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.encomendanotifier.Controller.ListaCondominosController">
+
+    <Label styleClass="titulo" text="👤 Lista de Condôminos" />
+
+    <TableView fx:id="tabelaCondominos" prefHeight="400" prefWidth="750">
+        <columns>
+            <TableColumn fx:id="colNome" prefWidth="233.60003662109375" text="Nome" />
+            <TableColumn fx:id="colCelular" prefWidth="196.0" text="Celular" />
+            <TableColumn fx:id="colQuadra" prefWidth="120.0" text="Quadra" />
+            <TableColumn fx:id="colLote" prefWidth="130.39990234375" text="Lote" />
+            <TableColumn fx:id="colVale" prefWidth="80.2000732421875" text="Vale" />
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Button fx:id="btnAlterar" disable="true" onAction="#onAlterarClick" text="✏️ Editar Condômino" />
+        <Button fx:id="btnVoltar" onAction="#onVoltarClick" text="🔙 Voltar" />
+    </HBox>
+
+</VBox>

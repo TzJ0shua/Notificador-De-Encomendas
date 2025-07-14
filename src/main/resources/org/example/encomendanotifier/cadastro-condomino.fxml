@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.encomendanotifier.Controller.CadastroCondominoController">
+    <VBox alignment="TOP_CENTER" spacing="20" styleClass="form-container" prefWidth="600">
+
+        <!-- Título -->
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="👤 Cadastro de Condômino" styleClass="form-title"/>
+            <Label text="Cadastre um novo condômino no sistema" styleClass="form-subtitle"/>
+        </VBox>
+
+        <!-- Formulário -->
+        <GridPane hgap="15" vgap="15">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50"/>
+                <ColumnConstraints percentWidth="50"/>
+            </columnConstraints>
+
+            <Label text="Nome Completo *" styleClass="form-subtitle" GridPane.columnIndex="0" />
+            <Label text="Celular (com DDD) *" styleClass="form-subtitle" GridPane.columnIndex="1" />
+
+            <TextField fx:id="nomeField" promptText="Digite o nome completo" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="celularField" promptText="(11) 99999-9999" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+            <Label text="Quadra *" styleClass="form-subtitle" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <Label text="Lote *" styleClass="form-subtitle" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <TextField fx:id="quadraField" promptText="Ex: A, B, C..." GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextField fx:id="loteField" promptText="Ex: 15, 08, 22..." GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+            <Label text="Vale *" styleClass="form-subtitle" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+
+            <TextField fx:id="valeField" promptText="Ex: 1, 2, 3, ..." GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        </GridPane>
+
+        <!-- Botão -->
+        <Button text="💾 Salvar Condômino" styleClass="primary-button" onAction="#salvarCondomino"/>
+
+    </VBox>
+</AnchorPane>
+

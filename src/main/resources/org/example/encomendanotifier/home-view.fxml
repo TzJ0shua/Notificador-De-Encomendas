@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.encomendanotifier.Controller.HomeController">
+    <VBox alignment="TOP_CENTER" prefWidth="1000" spacing="20" styleClass="main-pane">
+
+        <!-- Título -->
+        <VBox alignment="CENTER_LEFT" spacing="5" styleClass="header">
+            <Label styleClass="title" text="Controle de Encomendas" />
+            <Label styleClass="subtitle" text="Sistema de gerenciamento de encomendas do condomínio" />
+        </VBox>
+
+        <!-- Navegação -->
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="nav-bar">
+            <Button prefHeight="26.0" prefWidth="240.0" styleClass="nav-button" text="🎲 Tabela Condôminos" onAction="#abrirTelaTabelaCondominos"/>
+            <Button prefHeight="26.0" prefWidth="240.0" styleClass="nav-button" text="👤 Novo Condômino" onAction="#abrirTelaCondomino"/>
+            <Button prefWidth="240.0" styleClass="nav-button" text="➕ Nova Encomenda" onAction="#abrirTelaEncomendas"/>
+            <Button prefWidth="240.0" styleClass="nav-button" text="🔔 WhatsApp" />
+        </HBox>
+
+        <!-- Campo de busca -->
+        <VBox spacing="10" styleClass="content-box">
+            <Label styleClass="section-title" text="Lista de Encomendas" />
+            <Label styleClass="section-subtitle" text="Gerencie todas as encomendas do condomínio" />
+            <TextField promptText="Buscar por nome ou código de rastreio..." styleClass="search-field" />
+
+            <!-- Tabela -->
+            <TableView fx:id="tableEncomendas" prefHeight="300" styleClass="encomendas-table">
+                <columns>
+                    <TableColumn prefWidth="139.999966442585" text="Nome do Condômino" />
+                    <TableColumn minWidth="0.0" prefWidth="101.60000610351562" text="Casa" />
+                    <TableColumn minWidth="6.400054931640625" prefWidth="166.40003967285156" text="Código de Rastreio" />
+                    <TableColumn prefWidth="160.79998779296875" text="Data de Recebimento" />
+                    <TableColumn prefWidth="115.20001220703125" text="Status" />
+                    <TableColumn prefWidth="112.800048828125" text="Imagem" />
+                    <TableColumn maxWidth="4000.0" prefWidth="109.60009765625" text="Ações" />
+                </columns>
+            </TableView>
+        </VBox>
+
+    </VBox>
+</AnchorPane>

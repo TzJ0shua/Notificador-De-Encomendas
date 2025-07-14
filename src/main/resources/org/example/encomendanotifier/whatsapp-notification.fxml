@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.WhatsappController">
+    <VBox alignment="TOP_CENTER" spacing="20" styleClass="form-container" prefWidth="600">
+
+        <!-- Título -->
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="💬 Envio via WhatsApp" styleClass="form-title"/>
+            <Label text="Selecione uma encomenda na lista para enviar notificação" styleClass="form-subtitle"/>
+        </VBox>
+
+        <!-- Quando não há encomenda -->
+        <Label fx:id="mensagemVazia" text="Nenhuma encomenda selecionada" styleClass="form-subtitle"/>
+
+        <!-- Quando há encomenda -->
+        <VBox fx:id="encomendaBox" spacing="15" visible="false" managed="false">
+            <Label fx:id="labelDestinatario" text="Destinatário: "/>
+            <Label fx:id="labelEndereco" text="Endereço: "/>
+            <Label fx:id="labelCodigo" text="Código de Rastreio: "/>
+            <ImageView fx:id="imagemEncomenda" fitWidth="200" preserveRatio="true"/>
+            <ImageView fx:id="qrCodeImagem" fitWidth="120" preserveRatio="true"/>
+            <Button text="📲 Enviar WhatsApp" styleClass="success-button" onAction="#enviarWhatsapp"/>
+        </VBox>
+
+    </VBox>
+</AnchorPane>
+

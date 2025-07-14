@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.encomendanotifier.Controller.CadastroEncomendaController">
+    <VBox alignment="TOP_CENTER" spacing="20" styleClass="form-container" prefWidth="600">
+
+        <!-- Título -->
+        <VBox spacing="5" alignment="CENTER_LEFT">
+            <Label text="📦 Cadastro de Encomenda" styleClass="form-title"/>
+            <Label text="Registre uma nova encomenda recebida" styleClass="form-subtitle"/>
+        </VBox>
+
+        <!-- Formulário -->
+        <VBox spacing="15">
+
+            <VBox spacing="5">
+                <Label text="Condômino *"/>
+                <ComboBox fx:id="condominoComboBox" promptText="Selecione o condômino" />
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Código de Rastreio *"/>
+                <TextField fx:id="campoCodigoRastreio" promptText="Ex: BR123456789"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Descrição"/>
+                <TextArea fx:id="campoDescricao" promptText="Descrição da encomenda (opcional)..." prefRowCount="3"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="Foto da Encomenda"/>
+                <HBox spacing="10">
+                    <TextField fx:id="campoCaminhoImagem" editable="false" promptText="Escolher arquivo"/>
+                    <Button text="📤 Upload" styleClass="btn-padrao" onAction="#selecionarImagem"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+
+        <!-- Botão -->
+        <Button text="💾 Salvar Encomenda" styleClass="success-button" onAction="#salvarEncomenda"/>
+
+    </VBox>
+</AnchorPane>
+

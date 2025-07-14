@@ -1,0 +1,10 @@
+1- Terminar funcionalidade de edicao e delecao de condominos
+2- Permitir cadastro, edicao, delecao e mudanca de status de encomendas
+2.1- Implementar botao e tela para registro de retirada
+3- Estilizacao da tabela inicial de comandos(status, notificado essas coisas)
+4- Criacao da tela de envio de notificacoes whatsapp
+5- permitir notificacao via whatsapp
+6- Criacao de Qrcode que é enviado na notificacao com registro de nome da pessoa que retirou (podemos reutilizar a tela de retirada)
+
+Seria ideal que fosse feito em um mes
+
