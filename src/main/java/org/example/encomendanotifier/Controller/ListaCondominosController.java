@@ -25,6 +25,7 @@ public class ListaCondominosController {
     @FXML private TableColumn<Condomino, String> colVale;
     @FXML private Button btnAlterar;
     @FXML private Button btnVoltar;
+    @FXML private Button btnDeletar;
 
     private final ObservableList<Condomino> listaCondominos = FXCollections.observableArrayList();
 
@@ -71,6 +72,12 @@ public class ListaCondominosController {
     @FXML
     public void onVoltarClick() {
         Stage stage = (Stage) btnVoltar.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    public void onDeletarClick(){
+        Stage stage = (Stage) btnDeletar.getScene().getWindow();
         stage.close();
     }
 }

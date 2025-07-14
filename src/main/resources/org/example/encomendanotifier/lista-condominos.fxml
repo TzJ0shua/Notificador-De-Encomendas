@@ -24,6 +24,7 @@
     <HBox alignment="CENTER" spacing="10">
         <Button fx:id="btnAlterar" disable="true" onAction="#onAlterarClick" text="✏️ Editar Condômino" />
         <Button fx:id="btnVoltar" onAction="#onVoltarClick" text="🔙 Voltar" />
+        <Button fx:id="btnDeletar" onAction="#onDeletarClick" text="❌ Deletar" />
     </HBox>
 
 </VBox>
