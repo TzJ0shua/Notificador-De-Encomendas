@@ -1,9 +1,25 @@
 package org.example.encomendanotifier.Model;
 
+import java.util.UUID;
+
 public class Condomino {
     private String nome;
     private Endereco endereco;
     private String celular;
+    private UUID id;
+
+    public Condomino(){
+        UUID uuid = UUID.randomUUID();
+        this.id = uuid;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;

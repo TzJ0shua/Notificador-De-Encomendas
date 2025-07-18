@@ -3,6 +3,7 @@ package org.example.encomendanotifier.Repository;
 import org.example.encomendanotifier.Model.Condomino;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class CondominoRepository {
     public static ArrayList<Condomino> condominos = new ArrayList<>();
@@ -21,7 +22,10 @@ public class CondominoRepository {
     }
 
     public String toString(){
-
         return null;
+    }
+
+    public static boolean removerCondominoPorId(UUID id){
+        return condominos.removeIf(condomino -> condomino.getId().equals(id));
     }
 }

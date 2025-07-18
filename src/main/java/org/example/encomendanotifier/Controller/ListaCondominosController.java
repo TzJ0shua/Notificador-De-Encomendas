@@ -82,7 +82,10 @@ public class ListaCondominosController {
 
     @FXML
     public void onDeletarClick(){
-        Stage stage = (Stage) btnDeletar.getScene().getWindow();
-        stage.close();
+        Condomino selecionado = tabelaCondominos.getSelectionModel().getSelectedItem();
+        CondominoRepository.removerCondominoPorId(selecionado.getId());
+        tabelaCondominos.refresh();
+        listaCondominos.setAll(CondominoRepository.getCondominos());
+        System.out.println(listaCondominos);
     }
 }
