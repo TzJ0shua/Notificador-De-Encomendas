@@ -59,10 +59,6 @@ public class Condomino {
 
     @Override
     public String toString() {
-        return "Condomino{" +
-                "nome='" + nome + '\'' +
-                ", celular='" + celular + '\'' +
-                ", endereco=" + (endereco != null ? endereco.toString() : "null") +
-                '}';
+        return  nome + " - " + (endereco != null ? endereco.toString() : "null");
     }
 }

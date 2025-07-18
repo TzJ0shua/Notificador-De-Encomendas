@@ -1,14 +1,21 @@
 package org.example.encomendanotifier.Controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
+import org.example.encomendanotifier.Model.Condomino;
+import org.example.encomendanotifier.Model.Encomenda;
+import org.example.encomendanotifier.Repository.CondominoRepository;
+import org.example.encomendanotifier.Repository.EncomendaRepository;
 
 import java.io.File;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CadastroEncomendaController {
+public class CadastroEncomendaController implements Initializable {
 
-    @FXML private ComboBox<String> condominoComboBox;
+    @FXML private ComboBox<Condomino> condominoComboBox;
     @FXML private TextField campoCodigoRastreio;
     @FXML private TextArea campoDescricao;
     @FXML private TextField campoCaminhoImagem;
@@ -28,12 +35,25 @@ public class CadastroEncomendaController {
 
     @FXML
     private void salvarEncomenda() {
-        String nomeCondomino = condominoComboBox.getValue();
+        Condomino condomino = condominoComboBox.getValue();
         String codigo = campoCodigoRastreio.getText();
         String descricao = campoDescricao.getText();
         String imagem = campoCaminhoImagem.getText();
 
         // Salvar no banco ou lista
-        System.out.println("Nova encomenda para " + nomeCondomino + " com código " + codigo);
+        Encomenda novaEncomenda = new Encomenda();
+        novaEncomenda.setDestinatario(condomino);
+        novaEncomenda.setCodigoRastreio(codigo);
+        novaEncomenda.setDescricao(descricao);
+        novaEncomenda.setImagem(imagem);
+
+        System.out.println("Nova encomenda para " + condomino + " com código " + codigo);
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources){
+        for (Condomino c : CondominoRepository.getCondominos()){
+            condominoComboBox.getItems().add(c);
+        }
     }
 }

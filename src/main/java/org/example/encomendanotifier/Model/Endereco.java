@@ -31,9 +31,12 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "Endereco{" +
-                "quadra='" + quadra + '\'' +
-                ", lote='" + lote + '\'' +
-                '}';
+        if (quadra == null) {
+            return " Lote: " + lote + " Vale: " + vale;
+        }
+
+        else{
+            return " Quadra: " + quadra + " Lote: " + lote + " Vale: " + vale;
+        }
     }
 }

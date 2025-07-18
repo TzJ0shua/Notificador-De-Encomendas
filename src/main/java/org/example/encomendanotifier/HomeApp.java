@@ -4,6 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.encomendanotifier.Model.Condomino;
+import org.example.encomendanotifier.Model.Endereco;
+import org.example.encomendanotifier.Repository.CondominoRepository;
+
 import java.io.IOException;
 
 public class HomeApp extends Application {
@@ -20,6 +24,14 @@ public class HomeApp extends Application {
     }
 
     public static void main(String[] args) {
+        Condomino novoCondomino = new Condomino();
+        novoCondomino.setNome("Joshua Teles de Souza");
+        novoCondomino.setCelular("22997047165");
+        Endereco novoEndereco = new Endereco();
+        novoEndereco.setVale("4");
+        novoEndereco.setLote("190T");
+        novoCondomino.setEndereco(novoEndereco);
+        CondominoRepository.addCondominos(novoCondomino);
         launch();
     }
 }
