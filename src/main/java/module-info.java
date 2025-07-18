@@ -1,6 +1,7 @@
 module org.example.encomendanotifier {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
     opens org.example.encomendanotifier to javafx.fxml;
     opens org.example.encomendanotifier.Controller to javafx.fxml;

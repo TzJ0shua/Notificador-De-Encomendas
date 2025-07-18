@@ -1,10 +1,21 @@
 package org.example.encomendanotifier.Model;
 
+import java.util.UUID;
+
 public class Encomenda {
     private Condomino destinatario;
     private String codigoRastreio;
     private String descricao;
     private String imagem;
+    private UUID id;
+
+    public Encomenda(){
+        this.id = UUID.randomUUID();
+    }
+
+    public UUID getId() {
+        return id;
+    }
 
     public Condomino getDestinatario() {
         return destinatario;
